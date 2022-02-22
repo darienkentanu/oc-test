@@ -60,7 +60,7 @@ func main() {
 	receiv := hs[len(hs)-1]
 	received := receiv.Description
 	receivedSLC := strings.SplitN(received, "DELIVERED TO [", 2)
-	received2SLC := strings.SplitN(receivedSLC[1], "]", 2)
+	received2SLC := strings.SplitN(receivedSLC[1], "  |", 2)
 	r.Data.ReceivedBy = received2SLC[0]
 
 	b, err := json.Marshal(r)
